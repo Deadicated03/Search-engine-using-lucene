@@ -14,8 +14,10 @@ public class Printer {
 	private String abstr = null;
 	private String full_text = null;
 	private String analyzer;
-	public Printer(String analyzer) {
+	private String articles;
+	public Printer(String analyzer,String articles) {
 		this.analyzer = analyzer;
+		this.articles = articles;
 	}
 	
 	
@@ -46,7 +48,7 @@ public class Printer {
   
 	    	addDoc.addDoc(source_id, year, title, abstr, full_text);
 	        j++;
-	        if(j == 200) {
+	        if(j == Integer.parseInt(articles)) {
 	            break;
 	        }
 	    }
