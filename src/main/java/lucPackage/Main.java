@@ -24,7 +24,7 @@ public class Main {
         Directory directory = FSDirectory.open(dirPath);
         SearchEngineGUI GUI = new SearchEngineGUI();
         Parser parse = new Parser();
-        Printer print = new Printer(args[0]);
+        Printer print = new Printer(args[0],args[1]);
         CSVParser csvParser = parse.parser(csvFilePath.toString());
         print.printer(csvParser, directory);
         GUI.createAndShowGUI(directory,args[0],args[1]);
